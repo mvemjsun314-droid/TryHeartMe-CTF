@@ -17,7 +17,7 @@ The objective of this challenge was to find a way to purchase the hidden **Valen
 ```text
 10.48.177.31:5000 
 ```
-![TryHeartMe Web Application](Screenshot%202026-09-13%20203444.png)
+
 
 ### Skills Practiced
 
@@ -74,6 +74,8 @@ After authentication, I inspected the application using Firefox Developer Tools.
 
 🍪 3. Inspecting Cookies
 
+
+
 I opened:
 Developer Tools → Storage → Cookies
 I found an authentication cookie named:
@@ -108,6 +110,7 @@ Two fields were particularly interesting:
 "credits": 0
 
 The role field appeared to be related to authorization, while credits controlled the account balance.
+
 
 
 🚨 5. Identifying the Vulnerability
@@ -153,6 +156,7 @@ HEADER.PAYLOAD.
 Note: The actual JWT/token is intentionally not included in this write-up because authentication tokens should be treated as credentials.
 
 
+
 🍪 7. Replacing the Authentication Cookie
 
 I returned to:
@@ -170,6 +174,7 @@ I replaced the original token with the modified token.
 After refreshing the application, the modified token was accepted by the application.
 
 
+
 ⬆️ 8. Privilege Escalation
 
 The application now treated the account as having elevated privileges.
@@ -181,6 +186,7 @@ I navigated back to the shop and accessed the ValenFlag item.
 The flag was successfully obtained.
 
 FLAG: [REDACTED]
+![TryHeartMe CTF Completed](Screenshot%202026-09-13%20223730.png)
 
 
 💥 9. Impact
